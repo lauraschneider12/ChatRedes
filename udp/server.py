@@ -30,7 +30,7 @@ def start_server(host: str, port: int):
       
         print(f'[{name}] diz: {message}\n')
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     HOST = 'localhost'
     PORT = 8000
 

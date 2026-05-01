@@ -12,7 +12,7 @@ def start_client(host: str, port: int):
         client_socket.sendto(mensagem.encode('utf-8'), (host, port))
 
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     HOST = 'localhost'  # usa o mesmo do server
     PORT = 8000
 
