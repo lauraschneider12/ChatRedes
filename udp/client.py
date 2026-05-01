@@ -1,19 +1,19 @@
 import socket
 
-def connect_server(host: str, port: int):
-    client_socket =  socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+def start_client(host: str, port: int):
 
-    nome = input('type your name: ')
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+    name = input('Seu nome: ')
+
     while True:
-        message = input('type you message: ')
-        data = f"{nome}!#{message}".encode('utf-8')
+        msg = input('Mensagem: ')
+        mensagem = f'{name}!#{msg}'
+        client_socket.sendto(mensagem.encode('utf-8'), (host, port))
 
-        client_socket.sendto(data, (host,port))
 
-if __name__=='__main__':
-
-    HOST = '192.168.18.17'
-    # HOST = 'localhost'
+if _name_ == '_main_':
+    HOST = 'localhost'  # usa o mesmo do server
     PORT = 8000
 
-    connect_server(HOST,PORT)
+    start_client(HOST, PORT)
