@@ -12,7 +12,7 @@ def connect_server(host: str, port: int):
 
 if __name__=='__main__':
 
-    HOST = '10.20.25.186'
+    HOST = '192.168.18.17'
     # HOST = 'localhost'
     PORT = 8000
 
