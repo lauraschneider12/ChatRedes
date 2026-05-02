@@ -32,8 +32,12 @@ def start_server(host: str, port: int):
                 usuarios[addr] = name
                 print(f'{name} entrou no chat')
                 logging.info(f'{name} entrou no chat - {addr}')
-
-            if message.startswith('to '):
+            if message.startswith('/'):
+    
+                 if message == '/users':
+                     lista = ', '.join(usuarios.values())
+                     server_socket.sendto(f'Usuários: {lista}'.encode('utf-8'), addr)
+            elif message.startswith('to '):
                 partes = message.split(' ')
 
                 if len(partes) >= 3:
