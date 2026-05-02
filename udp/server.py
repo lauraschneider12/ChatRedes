@@ -38,7 +38,10 @@ def start_server(host: str, port: int):
                     server_socket.sendto(texto.encode('utf-8'), destino_addr)
                 else:
                     server_socket.sendto(f'Usuário {dest} não encontrado'.encode('utf-8'), addr)
-     
+            else:
+                server_socket.sendto('Use: to nome mensagem'.encode('utf-8'), addr)
+
+    
         else:
             for user_addr in usuarios:
                 texto = f'[{name}] {message}'
